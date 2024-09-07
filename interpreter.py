@@ -65,10 +65,38 @@ class Interpreter:
 # Example of running the interpreter
 def main():
     source_code = '''
-    func add(a, b) {
-        return a + b;
-    }
-    print(add(3, 4));
+// Define a function that adds two numbers
+func add(a, b) {
+    return a + b;
+}
+
+// Define a function that multiplies two numbers
+func multiply(x, y) {
+    return x * y;
+}
+
+// Main script execution
+var result = add(10, 20);  // result should be 30
+print(result);
+
+var product = multiply(result, 2);  // product should be 60
+print(product);
+
+// Using an if-else statement
+if (product > 50) {
+    print("Product is greater than 50");
+} else {
+    print("Product is not greater than 50");
+}
+
+// While loop to decrement the product
+while (product > 0) {
+    print(product);
+    product = product - 10;  // decrement product by 10
+}
+
+print("Finished!");
+
     '''
     lexer = Lexer(source_code)
     tokens = lexer.tokenize()
